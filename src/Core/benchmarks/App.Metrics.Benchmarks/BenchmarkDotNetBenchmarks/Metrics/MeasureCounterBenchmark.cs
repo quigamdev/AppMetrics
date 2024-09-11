@@ -31,11 +31,16 @@ namespace App.Metrics.Benchmarks.BenchmarkDotNetBenchmarks.Metrics
                 Fixture.Metrics.Measure.Counter.Increment(Metrics[i]);
             }
         }
-        
+
         [Benchmark]
         public void Decrement() { Fixture.Metrics.Measure.Counter.Decrement(MetricOptions.Counter.Options); }
 
         [Benchmark]
         public void Increment() { Fixture.Metrics.Measure.Counter.Increment(MetricOptions.Counter.Options); }
+        [Benchmark]
+        public void DecrementWithTags() { Fixture.Metrics.Measure.Counter.Decrement(MetricOptions.Counter.Options, new MetricTags("asd", "asd2")); }
+
+        [Benchmark]
+        public void IncrementWithTags() { Fixture.Metrics.Measure.Counter.Increment(MetricOptions.Counter.Options, new MetricTags("asd", "asd2")); }
     }
 }

@@ -14,7 +14,7 @@ namespace App.Metrics.Benchmarks.Configs
     {
         public DefaultConfig()
         {
-            AddJob(Job.Default.WithRuntime(CoreRuntime.Core31));
+            AddJob(Job.Default.WithRuntime(CoreRuntime.Core80));
             AddExporter(MarkdownExporter.GitHub);
             AddDiagnoser(MemoryDiagnoser.Default);
         }
